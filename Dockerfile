@@ -6,11 +6,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         cmake \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://code.videolan.org/rist/librist.git
-
 RUN pip3 install meson ninja
 
-RUN cd librist && \
+RUN git clone https://code.videolan.org/rist/librist.git && \
+    cd librist && \
     mkdir build && \
     cd build && \
     meson .. --default-library=static && \
