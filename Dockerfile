@@ -23,3 +23,6 @@ COPY --from=builder /librist/build/tools/rist2rist /usr/bin/
 COPY --from=builder /librist/build/tools/ristreceiver /usr/bin/
 COPY --from=builder /librist/build/tools/ristsender /usr/bin/
 COPY --from=builder /librist/build/tools/ristsrppasswd /usr/bin/
+
+WORKDIR /usr/bin
+CMD ["env"]
